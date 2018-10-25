@@ -6,6 +6,7 @@ package com.intraedge.cc.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.intraedge.cc.models.User;
 
@@ -16,9 +17,10 @@ import com.intraedge.cc.models.User;
 @Controller
 public class UserController {
 	
-	@RequestMapping("/registerUser.do")
-	public void createUser(@ModelAttribute User user) {
-		
+	@RequestMapping("/registerUser")
+	public ModelAndView login() {
+		System.out.println("Inside registration controller");
+		return null;
 	}
 
 }
