@@ -24,9 +24,9 @@ public class UserDaoImpl implements UserDao {
 	/* (non-Javadoc)
 	 * @see com.intraedge.cc.daos.UserDao#createUser(com.intraedge.cc.models.User)
 	 */
-	public int createUser(User user) throws DataAccessException {
+	public long createUser(User user) throws DataAccessException {
 		System.out.println("Inside UserDao impl");
-		return (Integer)hibernateTemplate.save(user);
+		return (Long)hibernateTemplate.save(user);
 	}
 
 	/* (non-Javadoc)
