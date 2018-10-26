@@ -3,14 +3,25 @@
  */
 package com.intraedge.cc.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  * @author vasanthj
  *
  */
+@Entity
+@Table(name="user")
 public class User {
 
-	private String id;
-	private String fullName;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long id;
+	private String firstName;
+	private String lastName;
 	private String username;
 	private String password;
 	private String role;
@@ -23,29 +34,43 @@ public class User {
 	/**
 	 * @return the id
 	 */
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
 	/**
-	 * @return the fullName
+	 * @return the firstName
 	 */
-	public String getFullName() {
-		return fullName;
+	public String getFirstName() {
+		return firstName;
 	}
 
 	/**
-	 * @param fullName the fullName to set
+	 * @param firstName the firstName to set
 	 */
-	public void setFullName(String fullName) {
-		this.fullName = fullName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	/**
+	 * @return the lastName
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+
+	/**
+	 * @param lastName the lastName to set
+	 */
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	/**
@@ -90,8 +115,13 @@ public class User {
 		this.role = role;
 	}
 
-	// TODO
-	// Implement an Overrided toString() method to print the User object in a
-	// meaningful way
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", username=" + username
+				+ ", password=" + password + ", role=" + role + "]";
+	}
 
 }

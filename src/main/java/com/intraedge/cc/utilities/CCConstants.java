@@ -7,7 +7,7 @@ package com.intraedge.cc.utilities;
  * @author vasanthj
  *
  */
-public class Constants {
+public class CCConstants {
 	
 	// User roles
 	public static final String ROLE_USER = "user";
